@@ -21,12 +21,12 @@ var artists = [
     ];
 
 var images = [
-    'http://bit.ly/2H4tTy2',
-    'http://bit.ly/2SKpXDP',
-    'http://bit.ly/2M1TfLF',
-    'http://bit.ly/2H3VEa2',
-    'http://bit.ly/2CYOW0H',
-    'http://bit.ly/2FoErFx',
+    'https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/76/b6/e4/76b6e4e2-5d85-1d5c-d524-c3b1f9cb8f8f/093624906407.jpg/268x0w.jpg',
+    'https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/76/b6/e4/76b6e4e2-5d85-1d5c-d524-c3b1f9cb8f8f/093624906407.jpg/268x0w.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/51cF-s0FDqL._SY355_.jpg',
+    'https://musicrow.com/wp-content/uploads/2018/04/unnamed-7.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/91%2B5lQW3TqL._SY355_.jpg',
+    'https://countrymusictattletale.com/wp-content/uploads/2018/09/Jimmie-Allen-500x500.jpg',
     ];
 
 var lengths = [
@@ -43,6 +43,7 @@ var links = [
     'http://bit.ly/2AEVVum',
     'http://bit.ly/2H53VdB',
     'http://bit.ly/2Fm1L7Q',
+    'http://bit.ly/2Fm1L7Q'
     ];
 
 
@@ -67,25 +68,25 @@ function displaySongInfo(){
         $("#lengths").append("<p>" + length + "</p>"); 
     });
 
-    links.forEach(function(link) {
-        $("#links").append("<a href='" + link + "'> Listen </a>"); 
+    links.forEach(function(links) {
+        $("#links").append("<a href='" + links + "'> Listen </a>"); 
     });
 }
 
-function emptySongInfo(){
-    $("#images").empty();
-    $("#songs").empty();
-    $("#artists").empty();
-    $("#lengths").empty();
-    $("#links").empty();
-}
+// function emptySongInfo(){
+//     $("#images").empty();
+//     $("#songs").empty();
+//     $("#artists").empty();
+//     $("#lengths").empty();
+//     $("#links").empty();
+// }
 
 $("#add").click(function() {
     var songName = $("#song").val();
     var imageUrl = $("#image").val();
     var artistName = $("#artist").val();
     var songLength = $("#length").val();
-    var link = $("#links").val();
+    var link = $("#link").val();
 
     songs.push(songName);
     artists.push(artistName);
@@ -93,8 +94,9 @@ $("#add").click(function() {
     lengths.push(songLength);
     links.push(link);
 
-    emptySongInfo()
     displaySongInfo();
 });
 
 displaySongInfo();
+
+console.log(links);
